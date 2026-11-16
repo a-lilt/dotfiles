@@ -1,0 +1,107 @@
+# ~/.config/yazi/theme.toml
+# Black on white, maroon accent (matches mono-maroon for nvim)
+# black   #000000
+# grey    #808080
+# light   #f2f2f2
+# maroon  #800000
+
+[mgr]
+cwd             = { fg = "#000000", bold = true }
+find_keyword    = { fg = "#800000", bold = true, underline = true }
+find_position   = { fg = "#800000", bold = true, italic = true }
+symlink_target  = { fg = "#808080", italic = true }
+marker_copied   = { fg = "#000000", bg = "#000000" }
+marker_cut      = { fg = "#800000", bg = "#800000" }
+marker_marked   = { fg = "#808080", bg = "#808080" }
+marker_selected = { fg = "#800000", bg = "#800000" }
+marker_symbol   = "│"
+count_copied    = { fg = "#ffffff", bg = "#000000" }
+count_cut       = { fg = "#ffffff", bg = "#800000" }
+count_selected  = { fg = "#ffffff", bg = "#800000" }
+border_symbol   = "│"
+border_style    = { fg = "#d0d0d0" }
+hovered         = { fg = "#ffffff", bg = "#800000" }
+preview_hovered = { fg = "#ffffff", bg = "#800000" }
+
+[tabs]
+active    = { fg = "#ffffff", bg = "#800000", bold = true }
+inactive  = { fg = "#000000", bg = "#f2f2f2" }
+sep_inner = { open = "", close = "" }
+sep_outer = { open = "", close = "" }
+
+[mode]
+normal_main = { fg = "#ffffff", bg = "#800000", bold = true }
+normal_alt  = { fg = "#000000", bg = "#f2f2f2" }
+select_main = { fg = "#ffffff", bg = "#000000", bold = true }
+select_alt  = { fg = "#000000", bg = "#f2f2f2" }
+unset_main  = { fg = "#ffffff", bg = "#000000", bold = true }
+unset_alt   = { fg = "#000000", bg = "#f2f2f2" }
+
+[indicator]
+parent  = { fg = "#ffffff", bg = "#800000" }
+current = { fg = "#ffffff", bg = "#800000" }
+preview = { underline = true }
+padding = { open = "█", close = "█" }
+
+[status]
+overall         = { fg = "#000000", bg = "#f2f2f2" }
+sep_left        = { open = "", close = "" }
+sep_right       = { open = "", close = "" }
+perm_sep        = { fg = "#808080" }
+perm_type       = { fg = "#000000" }
+perm_read       = { fg = "#000000" }
+perm_write      = { fg = "#800000" }
+perm_exec       = { fg = "#000000", bold = true }
+progress_label  = { fg = "#000000", bold = true }
+progress_normal = { fg = "#800000", bg = "#f2f2f2" }
+progress_error  = { fg = "#ffffff", bg = "#800000" }
+
+[which]
+mask      = { bg = "#f2f2f2" }
+cand      = { fg = "#800000", bold = true }
+rest      = { fg = "#808080" }
+desc      = { fg = "#000000" }
+separator_style = { fg = "#808080" }
+
+[input]
+border   = { fg = "#000000" }
+title    = { fg = "#000000", bold = true }
+value    = { fg = "#000000" }
+selected = { fg = "#ffffff", bg = "#800000" }
+
+[confirm]
+border  = { fg = "#000000" }
+title   = { fg = "#000000", bold = true }
+btn_yes = { fg = "#ffffff", bg = "#800000" }
+btn_no  = { fg = "#000000" }
+
+[tasks]
+border  = { fg = "#000000" }
+title   = { fg = "#000000", bold = true }
+hovered = { fg = "#ffffff", bg = "#800000" }
+
+[help]
+border  = { fg = "#000000" }
+chord   = { fg = "#800000", bold = true }
+action  = { fg = "#000000" }
+hovered = { fg = "#ffffff", bg = "#800000" }
+
+# every file black, folders bold, broken symlinks maroon
+[filetype]
+rules = [
+  { url = "*", is = "orphan", fg = "#800000" },
+  { url = "*/",    fg = "#000000", bold = true },
+  { url = "*",     fg = "#000000" },
+]
+
+# plain black icons: one folder icon, one file icon, no per-type colours
+[icon]
+globs = []
+dirs  = []
+files = []
+exts  = []
+conds = [
+  { if = "orphan", text = "\uf15b", fg = "#800000" },
+  { if = "dir",    text = "\uf07b", fg = "#000000" },
+  { if = "!dir",   text = "\uf15b", fg = "#000000" },
+]
